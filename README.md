@@ -32,10 +32,20 @@
                             - One can identify a unique resource using a URI 
                             
    Consider we are developing a blog application : - 
-                      ![Screenshot 2022-02-20 135457](https://user-images.githubusercontent.com/48161515/158130862-3f36319b-efc1-4254-9148-34807d4e253d.png)
      - we can define several endpoints as  - 
                                          - GET  : http://localhost:8080/api/posts    // Return list of all posts 
                                          - GET  : https://localhost:8080/api/posts/2  // Return a post whose ID is 2 
                                          - POST : https://localhost:8080/api/posts    // create a new post 
                     
-8. In REST based Applications 🦖 :p
+8. In REST based Applications 🦖 : The Relationship are often modelled by a sub Resource 
+                                                  -  / posts / {postId} / comments   --- {Return List of Comments for particular post }
+                                                  -  /posts / { postId } / comments / {commentId} ------{ Return a particular comment of a post }
+   
+   
+   NOTE :-  USE SUB RESOURCES WHEN CHILD OBJECT DOES NOT EXIST WITHOUT PARENT 
+               -- For ex Comments does not exist without post 
+               
+9. 
+   
+   
+9. 
