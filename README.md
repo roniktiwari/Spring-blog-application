@@ -14,8 +14,28 @@
                                                     ends 
                                                     
                                   - The client should have the ability to store responses in cache , this greatly improve the performance of the API 
-                                  - 
-                                  
+                                  - The server can have mutiple layers for implementation , this layerd architecture improve scalability by enabling load balancing 
+                             
+4. The fundamental concept of REST based system is "Resource" 
+
+5.  Resource is anything that you want to expose to the outside world through your application 
+
+6.  So whenever we are going to create an application , we should first identify the resources in our application 
+                                                          - For springboot blog application 
+                                                               :-   POST 
+                                                               :-   Comment
+                                                               :-   User
+                                                               :-   Tags 
+                                                              
+7. The Resources can be identified using UNIFORM RESOURCE IDENTIFIER ( URI ) for web based system .
+                            - For web based system , HTTP is the most common protocol to communicate with the external system
+                            - One can identify a unique resource using a URI 
+                            
+   Consider we are developing a blog application : - 
+                      ![Screenshot 2022-02-20 135457](https://user-images.githubusercontent.com/48161515/158130862-3f36319b-efc1-4254-9148-34807d4e253d.png)
+     - we can define several endpoints as  - 
+                                         - GET  : http://localhost:8080/api/posts    // Return list of all posts 
+                                         - GET  : https://localhost:8080/api/posts/2  // Return a post whose ID is 2 
+                                         - POST : https://localhost:8080/api/posts    // create a new post 
                     
-                    
- 
+8. In REST based Applications 🦖 :p
