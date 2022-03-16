@@ -116,7 +116,7 @@ The Application will be build on three tire Architecture
  
  
 | SR No. | #HTTP Method | #URL Path | #Status code | #Description  |
-| :---: | :---: | :---: | :---: | :---: | 
+| :---: | :---: | :---: | :---: | :---: |  
 | #1 | GET | /api/posts/{postId}/comments | 200 (OK) | Get the list of all the comment for a particular post | 
 | #2 | GET | /api/posts/{postId}/comments/{id} | 200 (OK) | Get an specific comment by id for a partiulcar post by postId | 
 | #3 | POST | /api/posts/{postId}/comments | 201 (Created) | craete a comment for a partiular post having id = postId | 
@@ -133,7 +133,20 @@ The Application will be build on three tire Architecture
 | #1 | POST | /api/auth/signup | 200 (OK) | signup | 
 | #2 | GET | /api/auth/signin | 200 (OK)  | signin  | 
 
-### FIRST STEP TO CRAETE A PROJECT 
+### FIRST STEP TO CRAETE A MAVEN PROJECT WITH DEPENDECY SHOWING IN THE IMAGE 
+
 
 ![image](https://user-images.githubusercontent.com/48161515/158632178-8f16238b-308d-4f49-aeee-ad8b5a44ae2d.png)
+
+
+
+IMPORTANT POINT :- 
+ 
+Whenever we add spring-data-jpa dependecy on class Path , It will try to create datasource object by looking into application.properties files
+We will provide several configuration property in properties file to configure JPA 
+
+#### we specify dialect so that hibernate can generate appropriate type of SQL statement for corresponding database configured 
+
+
+
 
