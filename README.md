@@ -48,6 +48,61 @@
                   
 9. We will be developing the complete backend of web application in this project 
 
-10. High level requirement
+10. High level requirement of the project 
+
+                     - User should be able to delete , update , create , retrieve posts
+                     - User Should be able to perform pagination and sorting 
+                     - user should be able to create , update , delete comments for posts
+                     - User should be able to register to blog Application
+                     - User should be able login to blog Application
+
+11. We will be building Rest APIs supporting pagination and sorting , logon and signup .
+12. Proper Rest APIs Exception handling and error handling 
+13. Securing Rest APIs with Role Based Security 
+14. Use token Based Authentication 
+15. Document all the rest APIs for consumers 
+16. We will deploy our blog Application in production 
+
+
+
+
+TECH STACK 
+---------------
+
+JAVA PLATFORM : -  JAVA 8+ 
+
+FRAMEWORK  : -  Spring Framework and its sub packages like SPRING-DATA-JPA, SPRING-BOOT ,SPRING-SECURITY
+
+BUILD TOOL : - MAVEN
+
+DATABASE : MYSQL 
+
+REST CLIENT : - POSTMAN 
+
+IDE :- INTELLIJE IDEA
+
+PRODUCTION :- AWS 
+
+REST API DUCUMENTATION : - SWAGGER 
+
+
+
+We are building rest APIs for blog Application . The Resources that can be identified in blog domain :- 
+                                    
+                                     - Post 
+                                     - Comment 
+                                     - User 
+                                     
+The Application will be build on three tire Architecture 
+            - Controller  (         Also known as API layer                   )
+            - Service     (         Contains Bussiness Logic                  )       
+            - Dao         (         to perform database related operation     )
+            
+1. DTO  -- DTO Will be passed from one layer to another layer 
+
+# H1
+
+
+
                
               
