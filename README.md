@@ -133,5 +133,7 @@ The Application will be build on three tire Architecture
 | #1 | POST | /api/auth/signup | 200 (OK) | signup | 
 | #2 | GET | /api/auth/signin | 200 (OK)  | signin  | 
 
+### FIRST STEP TO CRAETE A PROJECT 
 
+![image](https://user-images.githubusercontent.com/48161515/158632178-8f16238b-308d-4f49-aeee-ad8b5a44ae2d.png)
 
