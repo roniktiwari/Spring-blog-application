@@ -100,10 +100,38 @@ The Application will be build on three tire Architecture
             
 1. DTO  -- DTO Will be passed from one layer to another layer 
 
+## REST API FOR POST RESOURCE 
 
-
-| Attempt | #1 | #2 | #3 | #4 | #5 | #6 | #7 | #8 | #9 | #10 | #11 | #12 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| Seconds | 301 | 283 | 290 | 286 | 289 | 285 | 287 | 287 | 272 | 276 | 269 | 254 |
-               
+| SR No. | #HTTP Method | #URL Path | #Status code | #Description  |
+| :---: | :---: | :---: | :---: | :---: | 
+| #1 | GET | /api/posts | 200 (OK) | Get all posts| 
+| #2 | GET | /api/posts/{id} | 200 (OK) | Get post by id | 
+| #3 | POST | /api/posts | 201 (Created) | craete a new post | 
+| #4 | PUT | /api/posts/{id} | 200K | Update existing post with id | 
+| #5 | DELETE | /api/posts/{id} | 200K |  Delete an existing post with id | 
+| #6 | GET | /api/posts?pageSize=5 & pageNo=1 & sortBy=firstName| 200K |  pagination and sorting post | 
               
+             
+ ## REST APIs FOR POST COMMENT RESOURCE 
+ 
+ 
+| SR No. | #HTTP Method | #URL Path | #Status code | #Description  |
+| :---: | :---: | :---: | :---: | :---: | 
+| #1 | GET | /api/posts/{postId}/comments | 200 (OK) | Get the list of all the comment for a particular post | 
+| #2 | GET | /api/posts/{postId}/comments/{id} | 200 (OK) | Get an specific comment by id for a partiulcar post by postId | 
+| #3 | POST | /api/posts/{postId}/comments | 201 (Created) | craete a comment for a partiular post having id = postId | 
+| #4 | PUT | /api/posts/{postId}/comments/{id} | 200K | Update an existing comment by commentId for particular post having postId | 
+| #5 | DELETE | /api/posts/{id}/comments/{commentId} | 200K |  Delete an existing comment by commentId for a particular post having id as postId | 
+| #5 | GET | /api/posts?pageSize=5 & pageNo=1 & sortBy=firstName| 200K |  pagination and sorting post | 
+
+
+
+## REST APIs FOR SIGNUP APPLICATION
+
+| SR No. | #HTTP Method | #URL Path | #Status code | #Description  |
+| :---: | :---: | :---: | :---: | :---: | 
+| #1 | POST | /api/auth/signup | 200 (OK) | signup | 
+| #2 | GET | /api/auth/signin | 200 (OK)  | signin  | 
+
+
+
