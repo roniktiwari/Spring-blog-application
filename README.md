@@ -147,6 +147,16 @@ We will provide several configuration property in properties file to configure J
 
 #### we specify dialect so that hibernate can generate appropriate type of SQL statement for corresponding database configured 
 
+## Q. Why we don't right @Repository on the interface which implement JpaRepository?
+###  ANS . We don't need to right @Repository explicitly on the interface beacuse class which implement JpaRepository alread have it by default
+
+![image](https://user-images.githubusercontent.com/48161515/158828333-7d0870d1-8bb3-4513-9088-86ba55546744.png)
+
+- @ResponseStatus is used on the top of exception class , which cause the springboot to respond with the specified HTTP code
+
+- DTO Stands for data transfer object , we pass dto from one layer to another 
+- So whenever client stand the json payload it get converted to corresponding java object (DTO) for the conversion we use @RequestBody anotation 
+- Returning directly entity may lead to security issue 
 
 
 
