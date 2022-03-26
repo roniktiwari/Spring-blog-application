@@ -189,6 +189,8 @@ We will provide several configuration property in properties file to configure J
 to stablis this relationshiop we have used JPA anotation such as @OneToMany and @ManyToOne for bi-directional relationship
 
 
+### 🅰️  @ManyToOne(fetch = FetchType.LAZY)  --> FETCHTYPE.Lazy tells the hibernate to fetch only the related enties from the db when you use the relationship 
+
 
 
 
