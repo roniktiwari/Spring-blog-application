@@ -160,3 +160,22 @@ We will provide several configuration property in properties file to configure J
 
 
 
+## PAGINATION AND SORTING 
+
+- Pagination and sorting are mostly required when we want to display domain data in tabular form in UI .
+- Pagination allow user to view the small portion of data at a time 
+- sorting allow user to view the data in more organised way
+- Pagination consist of two fields �
+                
+                - Page Number 
+                - Page Size 
+
+- Sorting is done on a single or multiple feild on a table 
+- Generally pagination and sorting parameter are optional and thus part of request url as query parameters
+- The default pagination and sorting value shall be clearly documeted in API Docs .
+
+                                       - http://localhost:8080/api/posts?pageSize=5
+                                       - http://localhost:8080/api/posts?pageSize=5&geNumner=6
+                                       - http://localhost:8080/api/posts?pageSize=5&geNumner=6&sortBy=title
+                                     
+
