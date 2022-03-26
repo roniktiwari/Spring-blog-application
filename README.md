@@ -183,4 +183,13 @@ We will provide several configuration property in properties file to configure J
                     - Pageable 
                     - Page 
                     
-   
+## Relationship between domains 
+
+### ONE POST CAN HAVE MULTIPLE COMMENTS  ---> That means post is having one to many relationship with comments 
+to stablis this relationshiop we have used JPA anotation such as @OneToMany and @ManyToOne for bi-directional relationship
+
+
+
+
+
+
