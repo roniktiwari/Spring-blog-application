@@ -192,6 +192,17 @@ to stablis this relationshiop we have used JPA anotation such as @OneToMany and 
 ### 🅰️  @ManyToOne(fetch = FetchType.LAZY)  --> FETCHTYPE.Lazy tells the hibernate to fetch only the related enties from the db when you use the relationship 
 
 
+# BUILD COMMENT REST API 
 
+RETS APIs for comments resource 
+
+| SR No. | #HTTP Method | #URL Path | #Status code | #Description  |
+| :---: | :---: | :---: | :---: | :---: | 
+| #1 | GET | /api/posts/{id}/comments | 200 (OK) | Get all comments of a particular post having postId = id | 
+| #2 | GET | /api/posts/{id}/comments/{commentId} | 200 (OK) | Get a particular comment having comment id = commentId of a particular post having id = id | 
+| #3 | POST | /api/posts/{id}/comments | 201 (Created) | craete a new comment for a particular post having postId = id   | 
+| #4 | PUT | /api/posts/{id}/comments/{commentId} | 200K | Update an existing comment having id = commentId for a particular post having  post id =id | 
+| #5 | DELETE | /api/posts/{id}/comments/{id}| 200K |  Delete an existing comment with id = commentId for particular post with id = postId | 
+| #6 | GET | /api/posts/{id}/comments?pageSize=5 & pageNo=1 & sortBy=name| 200K |  pagination and sorting comments | 
 
 
