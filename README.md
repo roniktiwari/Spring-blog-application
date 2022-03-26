@@ -178,4 +178,9 @@ We will provide several configuration property in properties file to configure J
                                        - http://localhost:8080/api/posts?pageSize=5&geNumner=6
                                        - http://localhost:8080/api/posts?pageSize=5&geNumner=6&sortBy=title
                                      
-
+-There are two java interface that help in achieving sorting and pagination
+                  
+                    - Pageable 
+                    - Page 
+                    
+   
