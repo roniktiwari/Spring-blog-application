@@ -1,6 +1,7 @@
 package com.springboot.blog.service;
 
 import com.springboot.blog.dto.PostDto;
+import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.entity.Post;
 import org.springframework.http.HttpStatus;
 
@@ -10,9 +11,11 @@ public interface  PostService {
 
     public PostDto createPost(PostDto post) ;
 
-    public List<PostDto> getAllPosts();
+    public PostResponse getAllPosts(int pageNo, int pageSize,String sortBy);
 
     PostDto getPostById(long id);
 
     PostDto updatePost(PostDto post_dto, long id);
+
+    void deletePostUsingId(long postId );
 }

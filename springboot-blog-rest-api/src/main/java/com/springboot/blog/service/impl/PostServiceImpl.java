@@ -1,14 +1,19 @@
 package com.springboot.blog.service.impl;
 
 import com.springboot.blog.dto.PostDto;
+import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.entity.Post;
 import com.springboot.blog.exceptions.ResourceNotFoundException;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -38,11 +43,29 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> getAllPosts() {
-        List<Post> postList =   postRepository.findAll();
-        List<PostDto> postDtoList = new ArrayList<>() ;
-        return postList.stream().map( post -> mapToPostDto(post))
+    public PostResponse getAllPosts(int pageNo , int pageSize,String sortBy) {
+        // create pageable instance
+        Pageable pageable = PageRequest.of(pageNo,pageSize, Sort.by(sortBy));
+
+        Page<Post> postPage =   postRepository.findAll(pageable);
+
+        // get content from page
+        List<Post> postList = postPage.getContent() ;
+
+        // convert all Post into Dto
+        List<PostDto> postDtoList = postList.stream().map( post -> mapToPostDto(post))
                 .collect(Collectors.toList());
+
+        // construct post response
+        PostResponse response = new PostResponse();
+        response.setPostDtoList(postDtoList);
+        response.setPageNo(postPage.getNumber());
+        response.setPageSize(postPage.getSize());
+        response.setTotalElements(postPage.getTotalElements());
+        response.setTotalPages(postPage.getTotalPages());
+        response.setLast(postPage.isLast());
+
+        return response ;
     }
 
     @Override
@@ -60,6 +83,14 @@ public class PostServiceImpl implements PostService {
         post.setDescription(post_dto.getDescription());
         post.setContent(post_dto.getContent());
         return mapToPostDto(postRepository.save(post));
+    }
+
+    @Override
+    public void deletePostUsingId(long postId) {
+        Post post =postRepository.findById(postId).orElseThrow(() ->new ResourceNotFoundException("Post","Id",postId));
+        if(!ObjectUtils.isEmpty(post)) {
+            postRepository.deleteById(postId);
+        }
     }
 
 
