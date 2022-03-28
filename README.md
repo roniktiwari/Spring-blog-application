@@ -206,3 +206,8 @@ RETS APIs for comments resource
 | #6 | GET | /api/posts/{id}/comments?pageSize=5 & pageNo=1 & sortBy=name| 200K |  pagination and sorting comments | 
 
 
+#### 🌀 We validate a java bean with standard framework - JSR 380 also know as bean validation 2.0
+#### 🌀 Validation of user input is super common requirement in most application and java bean validation framework become de facto standerd for handling this logic this kind of logic 
+
+#### 🌀 JSR 380 is a specification of JAVA API for bean validation and this ensure that property of bean meet specific creteria
+#### Hibernate Validator is the reference implementation of validation API
