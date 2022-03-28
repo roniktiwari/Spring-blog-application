@@ -210,4 +210,18 @@ RETS APIs for comments resource
 #### 🌀 Validation of user input is super common requirement in most application and java bean validation framework become de facto standerd for handling this logic this kind of logic 
 
 #### 🌀 JSR 380 is a specification of JAVA API for bean validation and this ensure that property of bean meet specific creteria
-#### Hibernate Validator is the reference implementation of validation API
+#### 🌀 Hibernate Validator is the reference implementation of validation API
+#### 🌀 Springboot provide 
+
+
+Validation Dependecy 
+--------------------
+
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+</dependency>
+
+
+NOTE : - In order to validaton exception response, Global exceptionHandler class extends ResponseEntityExceptionHandler and override its method 
+
