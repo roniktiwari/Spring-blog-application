@@ -6,6 +6,7 @@ import com.springboot.blog.entity.Post;
 import com.springboot.blog.exceptions.ResourceNotFoundException;
 import com.springboot.blog.repository.PostRepository;
 import com.springboot.blog.service.PostService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -22,12 +23,14 @@ import java.util.stream.Collectors;
 public class PostServiceImpl implements PostService {
 
 
+    private ModelMapper modelMapper ;
     private PostRepository postRepository ;
 
     @Autowired
-    public PostServiceImpl(PostRepository repository)
+    public PostServiceImpl(PostRepository repository , ModelMapper modelMapper)
     {
         this.postRepository = repository ;
+        this.modelMapper=modelMapper ;
     }
 
     @Override
@@ -43,10 +46,12 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public PostResponse getAllPosts(int pageNo , int pageSize,String sortBy) {
-        // create pageable instance
-        Pageable pageable = PageRequest.of(pageNo,pageSize, Sort.by(sortBy));
+    public PostResponse getAllPosts(int pageNo , int pageSize,String sortBy,String sortDir) {
 
+        // creating Sort Object dynamically
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.ASC.name())? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending() ;
+        // create pageable instance
+        Pageable pageable = PageRequest.of(pageNo,pageSize, sort );
         Page<Post> postPage =   postRepository.findAll(pageable);
 
         // get content from page
@@ -96,23 +101,26 @@ public class PostServiceImpl implements PostService {
 
     private Post mapToPost(PostDto postDto)
     {
-        Post post  = new Post();
+        Post post  = modelMapper.map(postDto,Post.class);
+   /*   Post post  = new Post();
         post.setContent(postDto.getContent());
         post.setDescription(postDto.getDescription());
         post.setTitle(postDto.getTitle());
+    */
         return post ;
     }
 
     private PostDto mapToPostDto(Post post )
     {
+        PostDto postDto = modelMapper.map(post,PostDto.class);
+
+       /*
         PostDto post_dto = new PostDto();
         post_dto.setContent(post.getContent());
         post_dto.setDescription(post.getDescription());
         post_dto.setTitle(post.getTitle());
         post_dto.setId(post.getId());
-        return post_dto ;
+       */
+        return postDto ;
     }
-
-
-
 }

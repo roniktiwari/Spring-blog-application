@@ -5,10 +5,12 @@ import com.springboot.blog.dto.PostDto;
 import com.springboot.blog.dto.PostResponse;
 import com.springboot.blog.entity.Post;
 import com.springboot.blog.service.PostService;
+import com.springboot.blog.utils.AppConstants;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,29 +24,30 @@ public class PostController {
     }
 
     @PostMapping
-    public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto) {
+    public ResponseEntity<PostDto> createPost(@Valid @RequestBody  PostDto postDto) {
         return new ResponseEntity<PostDto>(postService.createPost(postDto), HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<PostResponse> getAllPosts (
-            @RequestParam(name="pageNo" , required = false , defaultValue = "0") int pageNo,
-            @RequestParam(name="pageSize",required = false, defaultValue="2") int pageSize,
-            @RequestParam(name="sortBy", required = false,defaultValue ="id") String sortBy
+            @RequestParam(name="pageNo" , required = false , defaultValue = AppConstants.DEFAULT_PAGE_NUMBER) int pageNo,
+            @RequestParam(name="pageSize",required = false, defaultValue=AppConstants.DEFAULT_PAGE_SIZE) int pageSize,
+            @RequestParam(name="sortBy", required = false,defaultValue =AppConstants.DEFAULT_SORT_BY) String sortBy,
+            @RequestParam(name="sortDir",required = false,defaultValue =AppConstants.DEFAULT_SORT_DIRECTION) String sortDir
     )
     {
 
-        return new ResponseEntity<PostResponse>(postService.getAllPosts(pageNo,pageSize,sortBy),HttpStatus.OK);
+        return new ResponseEntity<PostResponse>(postService.getAllPosts(pageNo,pageSize,sortBy,sortDir),HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PostDto> getPostById(@PathVariable(name="id") long id )
+    public ResponseEntity<PostDto> getPostById(  @PathVariable(name="id") long id )
     {
         return new ResponseEntity<PostDto>(postService.getPostById(id),HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PostDto> updatePost(@RequestBody PostDto post_dto , @PathVariable(name="id") long id )
+    public ResponseEntity<PostDto> updatePost( @Valid @RequestBody PostDto post_dto , @PathVariable(name="id") long id )
     {
         PostDto updatedPost = postService.updatePost(post_dto,id);
         return new ResponseEntity<>(updatedPost,HttpStatus.OK);
