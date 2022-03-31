@@ -214,14 +214,9 @@ RETS APIs for comments resource
 #### 🌀 Springboot provide 
 
 
-Validation Dependecy 
---------------------
-
-<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-validation</artifactId>
-</dependency>
-
-
 NOTE : - In order to validaton exception response, Global exceptionHandler class extends ResponseEntityExceptionHandler and override its method 
+
+## Now lets come to the security of the application 
+##### When we add spring-security dependecy in our application, springframework provide us a default user with user id ad "user" and password will be printed 
+##### inside the console of the application whenever we start it 
 
