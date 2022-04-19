@@ -218,5 +218,11 @@ NOTE : - In order to validaton exception response, Global exceptionHandler class
 
 ## Now lets come to the security of the application 
 ##### When we add spring-security dependecy in our application, springframework provide us a default user with user id ad "user" and password will be printed 
-##### inside the console of the application whenever we start it 
+##### inside the console of the application whenever we start it. 
+##### By Default spring security provide security to all the url of the application.
+
+
+when you add <dependecncy> springboot-stater-security </dependency> in the pom.xml file , it will download all the spring security related jars in the callpath 
+
+
 
