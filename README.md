@@ -223,6 +223,18 @@ NOTE : - In order to validaton exception response, Global exceptionHandler class
 
 
 when you add <dependecncy> springboot-stater-security </dependency> in the pom.xml file , it will download all the spring security related jars in the callpath 
+In order to configure.
+
+WebSecurityConfigurerAdapter is a class which implements WebSecurityConfigurer interface which provide default spring security configuration.
+we can overide some of the method of the method to customise default security configuration.
+
+
+The disadvantage of basic auth is that we need to send username and password in every request 
+
+
+
+
+
 
 
 
