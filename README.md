@@ -231,6 +231,12 @@ we can overide some of the method of the method to customise default security co
 
 The disadvantage of basic auth is that we need to send username and password in every request 
 
+in order to create new user in the application , we need to override "userDetailsService" of the class.
+
+![image](https://user-images.githubusercontent.com/48161515/164883718-cc478b8a-bede-4408-a9a5-3c9b1e0c02b3.png)
+
+
+
 
 
 
