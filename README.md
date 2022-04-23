@@ -235,6 +235,16 @@ in order to create new user in the application , we need to override "userDetail
 
 ![image](https://user-images.githubusercontent.com/48161515/164883718-cc478b8a-bede-4408-a9a5-3c9b1e0c02b3.png)
 
+In order to implement role based authentication from database. We need to create two entity class -
+            
+                                                          - User  - one user can have many roles
+                                                          - Role  - one role can have attach to many user
+                                                          
+
+
+![image](https://user-images.githubusercontent.com/48161515/164894191-707dedec-edcc-4d1a-bfdf-44e49cb7fa0d.png)
+
+
 
 
 
