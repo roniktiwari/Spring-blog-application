@@ -254,7 +254,12 @@ WHEN SHOULD YOU USE JSON WEB TOKEN
 
 1. Authorization : It is the most common scenerio to use JWT. Once the user logged in each subsequent request will inculde JWT allowing user to access the resources      that are permitted with that token. Single sign on feature that widely use now a days 
 
-2. information exchange :
+2. information exchange : JSON web token consist of three parts seprated by "."  -
+![jwt-token-structure](https://user-images.githubusercontent.com/48161515/164965542-f1f9b0ae-8863-4660-8f88-cc53485b8f87.svg)
+
+                                    -> Header
+                                    -> PayLoad 
+                                    -> Signature 
 
 
 
