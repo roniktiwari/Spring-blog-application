@@ -245,6 +245,16 @@ In order to implement role based authentication from database. We need to create
 ![image](https://user-images.githubusercontent.com/48161515/164894191-707dedec-edcc-4d1a-bfdf-44e49cb7fa0d.png)
 
 
+JWT ( JSON AUTHENTICATIONN TOKEN ) is a standard for securing the Rest Api's. It is the best way make secure communication b/w client and server.
+It follow stateless authentication mechanism without storing any session information on the server side.
+
+WHEN SHOULD YOU USE JSON WEB TOKEN 
+----------------------------------
+
+
+1. Authorization : It is the most common scenerio to use JWT. Once the user logged in each subsequent request will inculde JWT allowing user to access the resources      that are permitted with that token. Single sign on feature that widely use now a days 
+
+2. information exchange :
 
 
 
