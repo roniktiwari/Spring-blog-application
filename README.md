@@ -263,6 +263,10 @@ WHEN SHOULD YOU USE JSON WEB TOKEN
 
 ![jwt-token-structure](https://user-images.githubusercontent.com/48161515/164965542-f1f9b0ae-8863-4660-8f88-cc53485b8f87.svg)
 
+#### Header consist of two property : Type of token , Algorithm used 
+#### Payload consist of request body data 
+
+#### Signature is the encoded form of (header + payload + secret key)
 
 
 
